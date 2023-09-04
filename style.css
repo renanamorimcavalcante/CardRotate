@@ -1,0 +1,157 @@
+body {
+	background-color: #FFF5EE;
+	background-image: url('/Users/renan/Documents/CARD HTML5/Gifs/fungo1.gif');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	min-height: 100vh;
+  }
+  
+  h1 {
+	background-color: rgb(44, 62, 66);
+	color: rgb(227, 203, 180);
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 58px;
+	border: 3px solid #BC8F8F;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	position: relative; 
+	opacity: 0.75; 
+  }
+  
+  @keyframes moveText {
+	0% { left: 0; } /* Posição inicial */
+	50% { left: 10px; } /* Posição intermediária */
+	100% { left: 0; } /* Posição final (volta para a posição inicial) */
+  }
+  
+  /* Estilos do container dos cartões */
+  .card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center; /* Centraliza os cartões horizontalmente */
+	gap: 20px; /* Define um espaçamento de 20 pixels entre os cartões */
+  }
+  
+  /* Estilos dos cartões */
+  .card {
+	background-color: #E9967A; /* Cor de fundo do cartão */
+	border: 1px solid orangered; /* Borda do cartão */
+	border-radius: 50%; /* Raio de borda do cartão */
+	box-shadow: 2px 2px darkred; /* Sombra do cartão */
+	margin: 10px; /* Margem do cartão */
+	padding: 10px; /* Preenchimento interno do cartão */
+	width: 100px; /* Largura do cartão */
+	height: 100px; /* Altura do cartão */
+	transition: transform 0.5s ease-in-out; /* Transição para animação */
+	overflow: hidden; /* Ocultar conteúdo que excede as dimensões do cartão */
+	position: relative; /* Posicionamento relativo para conteúdo absoluto */
+	font-family: 'Roboto', sans-serif; /* Família de fontes do cartão */
+	color: #8B4513; /* Cor do texto do cartão */
+	opacity: 0.85; /* Adiciona opacidade de 85% */
+	transform-style: preserve-3d; /* TENTATIVA DE TIRAR BUG AO VIRAR CARD >> Permite que os elementos filhos tenham representação 3D correta */
+  }
+  
+  .card img {
+	width: 100%;
+	height: auto;
+  }
+  
+  .card .content {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	background-color: transparent; /* Alterado para transparente  - Antes era: rgba(255, 255, 255, 0.8);*/
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+  }
+
+  .card:hover {
+	transform: rotateY(180deg); /* Rotaciona o cartão em 180 graus ao passar o mouse */
+  }
+  
+  .card:hover .content {
+	opacity: 1; /* Torna o conteúdo visível ao passar o mouse */
+  }
+  
+  /* Estilos do overlay */
+  .overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo semitransparente */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s, visibility 0.5s;
+  }
+  
+  .overlay-content {
+	max-width: 600px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	text-align: center;
+  }
+  
+  /* Estilos do botão de fechar */
+  .close-button {
+	background-color: #8B0000;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+  }
+  
+  .close-button:hover {
+	background-color: #FF0000;
+  }
+  
+  /* Estilos da tela de código */
+  .code-screen {
+	max-height: 300px;
+	overflow: auto;
+	background-color: #f1f1f1;
+	padding: 10px;
+  }
+  
+  .code-screen pre {
+	margin: 0;
+  }
+  
+  .code-screen code {
+	display: block;
+	padding: 10px;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 14px;
+  }
+  
+  /* Estilo responsivo para telas menores */
+  @media screen and (max-width: 600px) {
+	.card {
+	  width: 80px;
+	  height: 80px;
+	}
+  
+	.overlay-content {
+	  max-width: 400px;
+	}
+  }
+  
+  
