@@ -1,6 +1,9 @@
 body {
 	background-color: #FFF5EE;
-	background-image: url('/Users/renan/Documents/CARD HTML5/Gifs/fungo1.gif');
+  	background-image: url('./img/fundo1.png');
+  	background-color: rgba(255, 255, 255, 0.7); /* Cor de fundo com opacidade */
+  	background-blend-mode: overlay; /* Misturar a imagem com a cor de fundo, para dar efeito bem ajustado de fato */
+   	background-repeat: no-repeat; 
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: center;
